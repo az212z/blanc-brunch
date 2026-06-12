@@ -36,7 +36,7 @@ h1,h2,h3,h4{font-weight:800;line-height:1.12;letter-spacing:-.01em}
 .on-dark .nm{color:#fff}.on-dark .nm small{color:var(--olive-l)}
 
 #pre{position:fixed;inset:0;z-index:10000;background:var(--olive-d);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;transition:opacity .9s var(--ease),visibility .9s}
-#pre.done{opacity:0;visibility:hidden}
+#pre.done{opacity:0;visibility:hidden;display:none;pointer-events:none}
 #pre b{font-family:var(--fl);font-size:clamp(30px,7vw,48px);color:#fff;font-weight:700;opacity:0;animation:plin 1s var(--ease) .2s forwards;letter-spacing:.04em}
 #pre .pb{width:120px;height:1px;background:rgba(255,255,255,.2);overflow:hidden;margin-top:6px}#pre .pb i{display:block;height:100%;width:0;background:var(--clay);animation:pbar 2.2s var(--ease) .3s forwards}
 @keyframes plin{to{opacity:1;transform:none}}@keyframes pbar{to{width:100%}}
