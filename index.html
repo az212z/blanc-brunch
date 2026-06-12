@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>بلانك برنش · Blanc Brunch — المرجان، جدة</title>
+<meta name="description" content="بلانك برنش (Blanc Brunch) في حي المرجان بجدة — فطورٌ متأخر وبرانش بأجواءٍ مشرقة: شكشوكة، توست، وأطباقٌ طازجة وعصائر. تقييم ٤٫٨ على قوقل من ٣٣٧ زائر. احجز أو اطلب عبر واتساب.">
+<meta property="og:title" content="بلانك برنش · Blanc Brunch — جدة">
+<meta property="og:description" content="صباحاتٌ مشرقة وبرانش طازج في قلب المرجان.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Playfair+Display+SC:wght@400;700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ee; --paper2:#f1e9da; --cream:#efe7d6; --card:#ffffff;
+  --olive:#5e6a37; --olive-d:#444e27; --olive-l:#828d57; --olive-soft:#e7ead9;
+  --clay:#c0683f; --clay-d:#a8542e;
+  --ink:#262219; --ink2:#5d5648; --ink3:#928a78;
+  --line:rgba(38,34,25,.14); --line2:rgba(38,34,25,.07);
+  --wline:rgba(255,255,255,.18); --wline2:rgba(255,255,255,.09);
+  --fa:'Tajawal',sans-serif; --fl:'Playfair Display SC',serif; --fk:'Karla',sans-serif;
+  --ease:cubic-bezier(.32,.72,0,1); --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--fa);font-weight:400;line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--olive);color:#fff}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-weight:800;line-height:1.12;letter-spacing:-.01em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+.fl{font-family:var(--fl)}
+
+.logo{display:inline-flex;align-items:center;gap:11px}
+.logo .nm{font-family:var(--fl);font-weight:700;font-size:21px;color:var(--ink);line-height:1;letter-spacing:.02em}
+.logo .nm small{display:block;font-family:var(--fa);font-size:10px;letter-spacing:.02em;color:var(--olive);font-weight:600;margin-top:2px}
+.on-dark .nm{color:#fff}.on-dark .nm small{color:var(--olive-l)}
+
+#pre{position:fixed;inset:0;z-index:10000;background:var(--olive-d);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;transition:opacity .9s var(--ease),visibility .9s}
+#pre.done{opacity:0;visibility:hidden}
+#pre b{font-family:var(--fl);font-size:clamp(30px,7vw,48px);color:#fff;font-weight:700;opacity:0;animation:plin 1s var(--ease) .2s forwards;letter-spacing:.04em}
+#pre .pb{width:120px;height:1px;background:rgba(255,255,255,.2);overflow:hidden;margin-top:6px}#pre .pb i{display:block;height:100%;width:0;background:var(--clay);animation:pbar 2.2s var(--ease) .3s forwards}
+@keyframes plin{to{opacity:1;transform:none}}@keyframes pbar{to{width:100%}}
+
+#prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:7000}#prog i{display:block;height:100%;width:0;background:var(--olive)}
+#nav{position:fixed;top:0;left:0;right:0;z-index:6500;transition:.4s var(--ease)}
+.nbar{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--maxw);margin:0 auto;padding:16px 32px;transition:.4s var(--ease)}
+#nav.shrink{background:rgba(250,246,238,.9);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 10px 30px -22px rgba(38,34,25,.4);border-bottom:1px solid var(--line2)}
+#nav.shrink .nbar{padding-top:11px;padding-bottom:11px}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-size:14.5px;color:var(--ink2);padding:8px 14px;border-radius:8px;transition:.3s var(--ease);font-weight:500}
+.nav-links a:hover{color:var(--olive-d);background:var(--olive-soft)}
+.ncta{display:inline-flex;align-items:center;gap:9px;background:var(--olive);color:#fff;padding:11px 20px;border-radius:8px;font-weight:600;font-size:14.5px;transition:.4s var(--ease)}
+.ncta:hover{background:var(--olive-d);transform:translateY(-1px)}.ncta svg{width:16px;height:16px;fill:#fff}
+.burger{display:none;width:46px;height:46px;border-radius:9px;background:var(--olive);border:none;cursor:pointer;position:relative}
+.burger span{position:absolute;left:13px;width:20px;height:2px;background:#fff;border-radius:2px;transition:.4s var(--ease)}
+.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:29px}
+.burger.x span:nth-child(1){top:23px;transform:rotate(45deg)}.burger.x span:nth-child(2){opacity:0}.burger.x span:nth-child(3){top:23px;transform:rotate(-45deg)}
+
+#mob{position:fixed;inset:0;z-index:6400;background:var(--olive-d);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;opacity:0;visibility:hidden;transition:.6s var(--ease)}
+#mob.open{opacity:1;visibility:visible}
+#mob a{font-family:var(--fl);font-weight:700;font-size:28px;color:#fff;opacity:0;transform:translateY(20px);transition:.6s var(--ease)}
+#mob a:hover{color:var(--clay)}
+#mob.open a{opacity:1;transform:none}
+#mob.open a:nth-child(1){transition-delay:.08s}#mob.open a:nth-child(2){transition-delay:.14s}#mob.open a:nth-child(3){transition-delay:.2s}#mob.open a:nth-child(4){transition-delay:.26s}
+
+.rv{opacity:0;transform:translateY(30px);filter:blur(5px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
+.rv.in{opacity:1;transform:none;filter:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+
+/* HERO editorial split */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,4vw,60px);align-items:center;max-width:var(--maxw);margin:0 auto;padding:128px 32px 64px}
+.hero-tx .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--fk);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive-d);font-weight:600;background:var(--olive-soft);padding:7px 16px;border-radius:100px}
+.hero-tx h1{font-size:clamp(42px,7vw,88px);font-weight:800;line-height:1.02;margin:18px 0 0;color:var(--ink);max-width:12ch;letter-spacing:-.02em}
+.hero-tx h1 span{font-family:var(--fl);font-weight:700;color:var(--clay);font-size:.92em}
+.hero-tx .sub{color:var(--ink2);font-size:clamp(16px,2.3vw,18.5px);max-width:40ch;margin-top:20px}
+.hero-act{display:flex;gap:13px;margin-top:28px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:11px;padding:15px 26px;border-radius:9px;font-weight:600;font-size:15.5px;transition:.4s var(--ease);font-family:var(--fa)}
+.btn svg{width:18px;height:18px}
+.btn-1{background:var(--olive);color:#fff}.btn-1 svg{fill:#fff}.btn-1:hover{background:var(--olive-d);transform:translateY(-2px);box-shadow:0 18px 34px -16px rgba(94,106,55,.55)}
+.btn-2{background:transparent;border:1.5px solid var(--line);color:var(--ink)}.btn-2 svg{fill:var(--clay)}.btn-2:hover{border-color:var(--olive);color:var(--olive-d)}
+.hero-rate{display:inline-flex;align-items:center;gap:11px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.hero-rate .rn{font-family:var(--fl);font-weight:700;font-size:25px;color:var(--ink);line-height:1}
+.hero-rate .stars{color:var(--clay);font-size:14px;letter-spacing:1px}
+.hero-rate small{font-family:var(--fk);font-size:11.5px;color:var(--ink3);display:block}
+.hero-ph{position:relative}
+.hero-ph .main{border-radius:24px;overflow:hidden;aspect-ratio:4/4.6;box-shadow:0 60px 110px -56px rgba(38,34,25,.5);border:1px solid var(--line2)}
+.hero-ph .main img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:ken 16s ease-out forwards}
+@keyframes ken{to{transform:scale(1)}}
+.hero-ph .chip{position:absolute;bottom:-14px;left:-12px;background:var(--clay);color:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 22px 40px -20px rgba(192,104,63,.6)}
+.hero-ph .chip b{font-family:var(--fl);font-weight:700;font-size:17px;display:block;line-height:1}.hero-ph .chip small{font-size:11px;font-family:var(--fk)}
+
+.strip{background:var(--olive-d);color:#fff;overflow:hidden;white-space:nowrap}
+.strip .track{display:inline-flex;animation:mq 30s linear infinite;padding:13px 0}
+.strip span{font-family:var(--fl);font-weight:400;font-size:16px;padding:0 24px;display:inline-flex;align-items:center;gap:24px;letter-spacing:.04em}
+.strip span::after{content:"·";color:var(--clay);font-size:24px;line-height:0}
+@keyframes mq{to{transform:translateX(50%)}}
+
+.sec{padding:clamp(70px,10vw,128px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--fk);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive-d);font-weight:600}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--olive)}
+.shead{margin-bottom:clamp(38px,5vw,56px);max-width:680px}
+.shead h2{font-size:clamp(30px,5vw,54px);margin:12px 0 0;color:var(--ink)}
+.shead h2 span{font-family:var(--fl);font-weight:700;color:var(--clay)}
+.shead p{color:var(--ink2);font-size:16.5px;margin-top:14px;max-width:56ch}
+
+/* about: photo + text */
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,5vw,72px);align-items:center}
+.about-ph{border-radius:22px;overflow:hidden;border:1px solid var(--line2);box-shadow:0 50px 90px -56px rgba(38,34,25,.45);aspect-ratio:11/9}
+.about-ph img{width:100%;height:100%;object-fit:cover;transition:1.2s var(--ease)}
+.about-ph:hover img{transform:scale(1.05)}
+.about-tx h2{font-size:clamp(30px,4.4vw,48px);color:var(--ink)}.about-tx h2 span{font-family:var(--fl);color:var(--clay)}
+.about-tx .lead{font-size:19px;color:var(--ink2);margin:16px 0 12px}
+.about-tx p{color:var(--ink2);font-size:16px;margin:0 0 14px}
+.stat-row{display:flex;gap:30px;margin-top:20px;flex-wrap:wrap}
+.stat b{font-family:var(--fl);font-weight:700;font-size:34px;color:var(--olive-d);display:block;line-height:1}
+.stat small{font-size:13px;color:var(--ink3);font-family:var(--fk)}
+
+/* menu highlights with photos */
+.menu-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(20px,3vw,28px)}
+.menu-ph{border-radius:22px;overflow:hidden;position:relative;min-height:340px}
+.menu-ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:1.2s var(--ease)}
+.menu-ph:hover img{transform:scale(1.05)}
+.menu-ph .cap{position:absolute;inset:auto 0 0 0;padding:24px;background:linear-gradient(0deg,rgba(38,34,25,.8),transparent);color:#fff}
+.menu-ph .cap b{font-family:var(--fl);font-weight:700;font-size:22px;display:block}
+.menu-ph .cap span{font-size:14px;color:rgba(255,255,255,.85);font-family:var(--fk)}
+.menu-list{display:flex;flex-direction:column;gap:14px}
+.mi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;transition:.4s var(--ease)}
+.mi:hover{transform:translateY(-3px);box-shadow:0 26px 46px -38px rgba(38,34,25,.4);border-color:var(--olive-l)}
+.mi b{font-size:16.5px;color:var(--ink);display:block}
+.mi span{font-size:13.5px;color:var(--ink2)}
+.mi .en{font-family:var(--fl);font-size:13px;color:var(--olive-d);letter-spacing:.02em}
+
+.contact{background:var(--olive-d);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(34px,5vw,64px);align-items:stretch}
+.contact .eyebrow{color:var(--olive-l)}.contact .eyebrow::before{background:var(--clay)}
+.contact h2{font-size:clamp(32px,5vw,52px);color:#fff;margin:12px 0 0}.contact h2 span{font-family:var(--fl);color:var(--clay)}
+.cinfo{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.crow{display:flex;align-items:center;gap:15px;background:rgba(255,255,255,.06);border:1px solid var(--wline);border-radius:14px;padding:15px 18px;transition:.4s var(--ease)}
+.crow:hover{background:rgba(255,255,255,.11)}
+.crow .ic{width:46px;height:46px;border-radius:13px;background:rgba(192,104,63,.3);display:grid;place-items:center;flex:none}
+.crow .ic svg{width:20px;height:20px;fill:#fff}
+.crow small{font-family:var(--fk);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);display:block}
+.crow b{font-weight:400;font-size:15px;color:#fff}.crow .num{font-family:var(--fl);font-weight:700;direction:ltr;display:inline-block;font-size:16px}
+.cact{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.cact a{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:9px;font-weight:600;font-size:15px;transition:.4s var(--ease)}
+.cact .wa{background:#25d366;color:#0a3d1c}.cact .wa svg{width:18px;height:18px;fill:#0a3d1c}.cact .wa:hover{transform:translateY(-2px)}
+.cact .call{background:var(--clay);color:#fff}.cact .call svg{width:17px;height:17px;fill:#fff}.cact .call:hover{transform:translateY(-2px);background:var(--clay-d)}
+.cmap{border-radius:20px;overflow:hidden;border:1px solid var(--wline);min-height:340px}
+.cmap iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.15) sepia(.12)}
+
+.foot{background:#1f2113;color:#fff;padding:54px 0 30px}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--wline);padding-bottom:28px}
+.foot p{color:rgba(255,255,255,.6);font-size:14px;max-width:40ch;margin-top:12px}
+.foot-bot{padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.foot-bot small{font-family:var(--fk);font-size:12px;color:rgba(255,255,255,.45)}
+
+.wa-float{position:fixed;bottom:22px;left:22px;z-index:6000;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 16px 40px -12px rgba(37,211,102,.55);transition:.45s var(--ease);animation:wap 3s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.08)}.wa-float svg{width:30px;height:30px;fill:#fff}
+@keyframes wap{0%,100%{box-shadow:0 16px 40px -12px rgba(37,211,102,.5)}50%{box-shadow:0 16px 54px -8px rgba(37,211,102,.85)}}
+
+@media(max-width:980px){
+  .nav-links{display:none}.burger{display:block}
+  .hero{grid-template-columns:1fr;gap:40px;padding-top:116px;min-height:auto}.hero-ph{max-width:420px;margin:0 auto;width:100%}
+  .about-grid{grid-template-columns:1fr;gap:36px}.about-ph{aspect-ratio:11/8}
+  .menu-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px}.hero{padding:106px 20px 54px}.nbar{padding:14px 20px}
+  .hero-act{flex-direction:column;align-items:stretch}.btn{justify-content:center}
+  .stat-row{gap:22px}.foot-bot{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="pre"><b>Blanc</b><div class="pb"><i></i></div></div>
+<div id="prog"><i></i></div>
+
+<nav id="nav">
+  <div class="nbar">
+    <a href="#top" class="logo"><span class="nm">Blanc<small>بلانك برنش · جدة</small></span></a>
+    <div class="nav-links">
+      <a href="#about">عن بلانك</a>
+      <a href="#menu">القائمة</a>
+      <a href="#gallery">أجواؤنا</a>
+      <a href="#contact">تواصل</a>
+    </div>
+    <a href="https://wa.me/966561965010?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AD%D8%AC%D8%B2" target="_blank" rel="noopener" class="ncta"><svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.13A11.8 11.8 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.8 11.8 0 0 1 8.4 3.48 11.8 11.8 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.7-1.45L.06 24zM6.6 20.2c1.65.98 3.23 1.56 5.45 1.56 5.45 0 9.9-4.43 9.9-9.88 0-5.46-4.43-9.9-9.9-9.9-5.46 0-9.89 4.44-9.89 9.9 0 2.33.68 4.07 1.83 5.9l-.99 3.62 3.6-.95z"/></svg>احجز طاولتك</a>
+  </div>
+</nav>
+
+<div id="mob">
+  <a href="#about">عن بلانك</a><a href="#menu">القائمة</a><a href="#gallery">أجواؤنا</a><a href="#contact">تواصل</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-tx">
+    <span class="eyebrow">برانش وفطور متأخر · المرجان، جدة</span>
+    <h1>صباحاتٌ<br><span>مشرقة</span><br>وبرانش طازج</h1>
+    <p class="sub">بلانك برنش وجهةٌ للفطور المتأخر في حي المرجان، نقدّم أطباقًا طازجة تُحضّر بحب، وعصائرَ منعشة، وأجواءً بيضاء مضيئة تليق ببداية يومك.</p>
+    <div class="hero-act">
+      <a href="https://wa.me/966561965010?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AD%D8%AC%D8%B2" target="_blank" rel="noopener" class="btn btn-1"><svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.13A11.8 11.8 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.8 11.8 0 0 1 8.4 3.48 11.8 11.8 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.7-1.45L.06 24zM6.6 20.2c1.65.98 3.23 1.56 5.45 1.56 5.45 0 9.9-4.43 9.9-9.88 0-5.46-4.43-9.9-9.9-9.9-5.46 0-9.89 4.44-9.89 9.9 0 2.33.68 4.07 1.83 5.9l-.99 3.62 3.6-.95z"/></svg>احجز عبر واتساب</a>
+      <a href="#menu" class="btn btn-2"><svg viewBox="0 0 24 24"><path d="M14 5l-1.4 1.4 4.6 4.6H4v2h13.2l-4.6 4.6L14 19l7-7z"/></svg>القائمة</a>
+    </div>
+    <div class="hero-rate">
+      <div><div class="rn">4.8</div><div class="stars">★★★★★</div></div>
+      <div><small>تقييم قوقل</small><small>٣٣٧ زائر سعيد</small></div>
+    </div>
+  </div>
+  <div class="hero-ph">
+    <div class="main"><img src="img/hero.jpg" alt="طبق برانش متنوّع في بلانك برنش بجدة"></div>
+    <div class="chip"><b>4.8★</b><small>تقييم قوقل · جدة</small></div>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>شكشوكة</span><span>توست ستيك &amp; مشروم</span><span>صاج بيقل</span><span>عصائر طازجة</span><span>قهوة مختصة</span><span>برانش</span>
+    <span>شكشوكة</span><span>توست ستيك &amp; مشروم</span><span>صاج بيقل</span><span>عصائر طازجة</span><span>قهوة مختصة</span><span>برانش</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-ph rv"><img src="img/interior.jpg" alt="أجواء بلانك برنش الداخلية المضيئة في المرجان بجدة"></div>
+    <div class="about-tx">
+      <span class="eyebrow rv">عن بلانك</span>
+      <h2 class="rv d1">بياضٌ يفتح <span>الشهية</span></h2>
+      <div class="lead rv d1">مساحةٌ مضيئة في المرجان، صُمّمت لتكون بداية يومٍ جميلة.</div>
+      <p class="rv d2">في بلانك برنش نؤمن أن الفطور المتأخر طقسٌ يستحق الاحتفاء — لذلك نحضّر أطباقنا من مكوّناتٍ طازجة، ونقدّمها في أجواءٍ بيضاء أنيقة تبعث على الراحة.</p>
+      <div class="stat-row rv d2">
+        <div class="stat"><b data-count="4.8" data-dec="1">0</b><small>تقييم قوقل</small></div>
+        <div class="stat"><b data-count="337" data-suf="+">0</b><small>زائر سعيد</small></div>
+        <div class="stat"><b data-count="100" data-suf="%">0</b><small>طازج يوميًا</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="sec" id="menu" style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow">القائمة</span>
+      <h2>أطباقٌ <span>تستحق الصباح</span></h2>
+      <p>لمحةٌ من قائمة البرانش — تتجدّد بنكهاتٍ طازجة.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-ph rv"><img src="img/food.jpg" alt="تشكيلة أطباق البرانش في بلانك"><div class="cap"><b>طاولة البرانش</b><span>تشكيلة تكفي للمشاركة</span></div></div>
+      <div class="menu-list">
+        <div class="mi rv"><b>شكشوكة كلاسيك</b><span class="en">Classic Shakshuka</span></div>
+        <div class="mi rv d1"><b>توست ستيك ومشروم</b><span class="en">Steak Mushroom Toast</span></div>
+        <div class="mi rv d1"><b>صاج بيقل سعودي</b><span class="en">Saudi Bagel</span></div>
+        <div class="mi rv d2"><b>عصائر طازجة</b><span class="en">Fresh Juices</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow">أجواؤنا</span>
+      <h2>مكانٌ يشبه <span>صباحك</span></h2>
+      <p>لمحاتٌ من بلانك — حيث يلتقي الطعام الجيد بالأجواء المضيئة.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-ph rv"><img src="img/store.jpg" alt="واجهة بلانك برنش في حي المرجان بجدة"><div class="cap"><b>تجدنا في المرجان</b><span>واجهةٌ مميّزة يسهل الوصول إليها</span></div></div>
+      <div class="menu-ph rv d1"><img src="img/drinks.jpg" alt="عصائر طازجة في بلانك برنش"><div class="cap"><b>عصائرٌ منعشة</b><span>طازجة تُحضّر عند الطلب</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow rv">تواصل معنا</span>
+      <h2 class="rv d1">احجز <span>طاولتك</span></h2>
+      <div class="cinfo">
+        <a class="crow rv d1" href="tel:+966561965010"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1A17 17 0 0 1 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.12.35.03.75-.24 1.02L6.6 10.8z"/></svg></span><span><small>هاتف · واتساب</small><b class="num">056 196 5010</b></span></a>
+        <a class="crow rv d2" href="https://www.google.com/maps/place/Blanc+Brunch/@21.7018472,39.105059,17z" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span><span><small>الموقع</small><b>حي المرجان · جدة</b></span></a>
+      </div>
+      <div class="cact">
+        <a class="wa" href="https://wa.me/966561965010?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.13A11.8 11.8 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.8 11.8 0 0 1 8.4 3.48 11.8 11.8 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.7-1.45L.06 24zM6.6 20.2c1.65.98 3.23 1.56 5.45 1.56 5.45 0 9.9-4.43 9.9-9.88 0-5.46-4.43-9.9-9.9-9.9-5.46 0-9.89 4.44-9.89 9.9 0 2.33.68 4.07 1.83 5.9l-.99 3.62 3.6-.95z"/></svg>احجز واتساب</a>
+        <a class="call" href="tel:+966561965010"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1A17 17 0 0 1 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.12.35.03.75-.24 1.02L6.6 10.8z"/></svg>اتصال مباشر</a>
+      </div>
+    </div>
+    <div class="cmap rv d1">
+      <iframe src="https://www.google.com/maps?q=21.7018472,39.105059&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع بلانك برنش على الخريطة"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top on-dark">
+      <div>
+        <span class="logo"><span class="nm">Blanc<small>بلانك برنش · جدة</small></span></span>
+        <p>برانش وفطور متأخر في حي المرجان بجدة — صباحاتٌ مشرقة.</p>
+      </div>
+      <a href="tel:+966561965010" class="ncta"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1A17 17 0 0 1 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.12.35.03.75-.24 1.02L6.6 10.8z"/></svg>056 196 5010</a>
+    </div>
+    <div class="foot-bot">
+      <small>© 2026 بلانك برنش · حي المرجان، جدة</small>
+      <small class="fl">Blanc Brunch</small>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/966561965010?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85" target="_blank" rel="noopener" aria-label="واتساب">
+  <svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.13A11.8 11.8 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.8 11.8 0 0 1 8.4 3.48 11.8 11.8 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.7-1.45L.06 24zM6.6 20.2c1.65.98 3.23 1.56 5.45 1.56 5.45 0 9.9-4.43 9.9-9.88 0-5.46-4.43-9.9-9.9-9.9-5.46 0-9.89 4.44-9.89 9.9 0 2.33.68 4.07 1.83 5.9l-.99 3.62 3.6-.95zM17.9 14.6c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.42z"/></svg>
+</a>
+
+<script>
+(function(){
+  var pre=document.getElementById('pre');function hide(){pre.classList.add('done')}
+  window.addEventListener('load',function(){setTimeout(hide,500)});setTimeout(hide,2600);
+  var prog=document.querySelector('#prog i'),nav=document.getElementById('nav');
+  function onScroll(){var h=document.documentElement,sc=h.scrollTop,mx=h.scrollHeight-h.clientHeight;prog.style.width=(mx>0?(sc/mx*100):0)+'%';nav.classList.toggle('shrink',sc>30);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var burger=document.querySelector('.burger'),mob=document.getElementById('mob');
+  function toggle(){burger.classList.toggle('x');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':''}
+  burger.addEventListener('click',toggle);
+  mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(mob.classList.contains('open'))toggle()})});
+  function countUp(el){var t=parseFloat(el.getAttribute('data-count')),dec=parseInt(el.getAttribute('data-dec')||'0'),suf=el.getAttribute('data-suf')||'',st=null,dur=1400;
+    function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/dur,1);var e=1-Math.pow(1-p,3);var v=t*e;el.textContent=(dec?v.toFixed(dec):Math.round(v))+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+  var rvs=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(function(c){if(!c.dataset.done){c.dataset.done=1;countUp(c)}});io.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -7% 0px'});rvs.forEach(function(el){io.observe(el)});}
+  else{rvs.forEach(function(el){el.classList.add('in')});}
+})();
+</script>
+</body>
+</html>
